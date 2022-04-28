@@ -10,6 +10,10 @@ import i18n from "./../utils/i18n.config";
 import FontAwesome from "react-native-vector-icons/FontAwesome5";
 import { fontContext } from "../context/FontContext";
 import { AuthContext } from "../context/AuthContext";
+import MapScreen from "../screens/MapScreen/MapScreen";
+import CartScreen from '../screens/CartScreen/CartScreen';
+import ChatScreen from '../screens/ChatScreen/ChatScreen';
+import FavoriteScreen from '../screens/FavoriteScreen/FavoriteScreen';
 const Drawer = createDrawerNavigator();
 
 export default function Sidebar() {
@@ -88,6 +92,50 @@ export default function Sidebar() {
           drawerLabel: `${i18n.t("Configuración")}`,
         }}
         component={SettingScreen}
+      />
+      <Drawer.Screen
+        name="MapScreen"
+        options={{
+          title: `${i18n.t("Localización")}`,
+          drawerIcon: ({ size }) => (
+            <FontAwesome name="map" color={"#fff"} size={size} />
+          ),
+          drawerLabel: `${i18n.t("Localización")}`,
+        }}
+        component={MapScreen}
+      />
+      <Drawer.Screen
+        name="CartScreen"
+        options={{
+          title: `${i18n.t("Carrito")}`,
+          drawerIcon: ({ size }) => (
+            <FontAwesome name="shopping-cart" color={"#fff"} size={size} />
+          ),
+          drawerLabel: `${i18n.t("Carrito")}`,
+        }}
+        component={CartScreen}
+      />
+      <Drawer.Screen
+        name="FavoriteScreen"
+        options={{
+          title: `${i18n.t("Favoritos")}`,
+          drawerIcon: ({ size }) => (
+            <FontAwesome name="bookmark" color={"#fff"} size={size} />
+          ),
+          drawerLabel: `${i18n.t("Favoritos")}`,
+        }}
+        component={FavoriteScreen}
+      />
+      <Drawer.Screen
+        name="ChatScreen"
+        options={{
+          title: `${i18n.t("Chat")}`,
+          drawerIcon: ({ size }) => (
+            <FontAwesome name="sms" color={"#fff"} size={size} />
+          ),
+          drawerLabel: `${i18n.t("Chat")}`,
+        }}
+        component={ChatScreen}
       />
       <Drawer.Screen
         name="SupportScreen"

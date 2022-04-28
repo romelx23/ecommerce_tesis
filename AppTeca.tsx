@@ -1,4 +1,5 @@
 import React from 'react'
+import CustomTabBottom from './src/components/CustomTabBottom'
 import { AuthProvider } from './src/context/AuthContext'
 import FontProvider from './src/context/FontContext'
 import { ProductosProvider } from './src/context/ProductosContext'
@@ -16,6 +17,7 @@ const AppTeca = () => {
                         <FontProvider>
                             <ShowProvider>
                                 <AppRouter></AppRouter>
+                                {/* <CustomTabBottom/> */}
                             </ShowProvider>
                         </FontProvider>
                     </TemaProvider>
