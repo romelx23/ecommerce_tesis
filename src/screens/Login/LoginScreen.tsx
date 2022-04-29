@@ -240,7 +240,7 @@ const LoginScreen = ({ navigation }: PropsLoginScreen) => {
 
 const style = StyleSheet.create({
   contenedor: {
-    backgroundColor: "#A7C5DD",
+    backgroundColor: "#edf1f4",
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
@@ -273,13 +273,14 @@ const style = StyleSheet.create({
     fontWeight: "500",
     fontSize: 15,
     marginBottom: 4,
+    color:"#000",
   },
   buttonSave: {
     paddingTop: 10,
     paddingBottom: 10,
     borderRadius: 5,
     marginBottom: 3,
-    backgroundColor: "#10ac84",
+    backgroundColor: "#3997f9",
     width: "100%",
   },
   buttonGoogle: {
@@ -306,7 +307,7 @@ padding: 6 ,
     paddingBottom: 10,
     borderRadius: 5,
     marginBottom: 3,
-    backgroundColor: "#e58e26",
+    backgroundColor: "#6abcfe",
     width: "100%",
   },
   buttonText: {
@@ -314,10 +315,10 @@ padding: 6 ,
     textAlign: "center",
   },
   appTitulo: {
-    fontWeight: "500",
+    fontWeight: "700",
     fontSize: 35,
     marginBottom: 4,
-    color: "#fff",
+    color: "#0a1424",
   },
 });
 

@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     // alignItems: "center",
-    backgroundColor: "#A7C5DD",
+    backgroundColor: "#edf1f4",
   },
   input: {
     width: "100%",
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     borderRadius: 5,
     marginBottom: 3,
-    backgroundColor: "#10ac84",
+    backgroundColor: "#3997f9",
     width: "100%",
   },
   buttonUpdate: {
@@ -237,10 +237,10 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   appTitulo: {
-    fontWeight: "500",
+    fontWeight: "700",
     fontSize: 35,
     marginBottom: 4,
-    color: "#fff",
+    color:"#000",
   },
 });
 
