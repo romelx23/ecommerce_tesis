@@ -77,6 +77,15 @@ export interface PropsDetalleProducto{
     navigation:Navigation
 }
 
+export interface PropsCategory{
+    route: {
+        params:{
+            name:string
+        }
+    },
+    navigation:Navigation
+}
+
 export interface ProductoDetalle {
     precio:       number | string;
     disponible:   boolean;

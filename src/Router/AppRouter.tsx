@@ -17,6 +17,7 @@ import GmailScreen from "../screens/SuportScreen/GmailScreen";
 import i18n from "./../utils/i18n.config";
 import ActulizarDatosUser from "../screens/perfil/ActulizarDatosUser";
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
+import CategoryScreen from '../screens/CategoryScreen/CategoryScreen';
 
 type RootStackParamList = {
   Home: undefined;
@@ -40,7 +41,7 @@ const MyTheme = {
     background:'#e0e4f3',
     primary:'#f0f7ff'
   },
-  cardColor:'#A7C5DD'
+  cardColor:'#ffffff'
 };
 
 const MyDarkTheme = {
@@ -87,6 +88,17 @@ const AppRouter = () => {
           component={DetalleProducto}
           options={{
             title: `${i18n.t("Producto")}`,
+            headerStyle: { backgroundColor: "#333" },
+            headerTitleStyle: { color: "#ffffff" },
+            headerTintColor: "#fff",
+            // animation: "fade_from_bottom",
+          }}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="category"
+          component={CategoryScreen}
+          options={{
+            title: `${i18n.t("Categoria")}`,
             headerStyle: { backgroundColor: "#333" },
             headerTitleStyle: { color: "#ffffff" },
             headerTintColor: "#fff",

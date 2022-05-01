@@ -46,7 +46,7 @@ export default function Sidebar() {
       <Drawer.Screen
         name="Task App"
         options={{
-          title: `${i18n.t("Teca App")}`,
+          title: `${i18n.t("Tiendita de Don Pepe")}`,
           drawerIcon: ({ size }) => (
             <FontAwesome name="home" color={"#fff"} size={size} />
           ),

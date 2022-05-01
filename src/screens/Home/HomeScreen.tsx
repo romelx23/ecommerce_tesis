@@ -7,6 +7,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getVerificarUsuario } from '../../helpers/fetch'
 import { Layout } from '../../components/Layout'
 import { AuthContext } from '../../context/AuthContext'
+import { FlatList } from 'react-native-gesture-handler'
+import { Icon } from 'react-native-elements'
+import ListCategories from '../../components/Categories/ListCategories'
 
 const HomeScreen = ({ navigation }: PropsNavigationHome) => {
 
@@ -45,6 +48,9 @@ const HomeScreen = ({ navigation }: PropsNavigationHome) => {
         <View
         style={style.contenedor}
         >
+            <View style={style.containerCategory}>
+                <ListCategories navigation={navigation}/>
+            </View>
             <Search></Search>
             <ListItem navigation={navigation} />
         </View>
@@ -56,6 +62,28 @@ const style = StyleSheet.create({
         // backgroundColor:'#4f6ba7',
         padding: 10,
         flex: 1,
+    },
+    containerCategory: {
+        flexDirection: "row",
+        // justifyContent: "space-between",
+        
+        alignItems: "center",
+        marginBottom: 10,
+        paddingHorizontal: 20,
+    },
+    cardCategory:{
+        // display: 'flex',
+        // flexDirection: 'column',
+        marginRight: 12,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    cardIcon:{
+        backgroundColor: '#f8e6d9',
+        padding: 15,
+        width: 60,
+        borderRadius: 10,
     }
 })
 
