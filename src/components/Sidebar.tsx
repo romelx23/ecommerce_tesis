@@ -11,10 +11,10 @@ import FontAwesome from "react-native-vector-icons/FontAwesome5";
 import { fontContext } from "../context/FontContext";
 import { AuthContext } from "../context/AuthContext";
 import MapScreen from "../screens/MapScreen/MapScreen";
-import CartScreen from '../screens/CartScreen/CartScreen';
-import ChatScreen from '../screens/ChatGeneralScreen/ChatScreen/ChatScreen';
-import FavoriteScreen from '../screens/FavoriteScreen/FavoriteScreen';
-import { ChatGeneralScreen } from '../screens/BottonNavigation/ChatGeneralScreen';
+import CartScreen from "../screens/CartScreen/CartScreen";
+import ChatScreen from "../screens/ChatGeneralScreen/ChatScreen/ChatScreen";
+import FavoriteScreen from "../screens/FavoriteScreen/FavoriteScreen";
+import { ChatGeneralScreen } from "../screens/BottonNavigation/ChatGeneralScreen";
 const Drawer = createDrawerNavigator();
 
 export default function Sidebar() {
@@ -83,17 +83,7 @@ export default function Sidebar() {
       ) : (
         <></>
       )}
-      <Drawer.Screen
-        name="SettingsScreen"
-        options={{
-          title: `${i18n.t("Configuración")}`,
-          drawerIcon: ({ size }) => (
-            <FontAwesome name="cogs" color={"#fff"} size={size} />
-          ),
-          drawerLabel: `${i18n.t("Configuración")}`,
-        }}
-        component={SettingScreen}
-      />
+
       <Drawer.Screen
         name="MapScreen"
         options={{
@@ -148,6 +138,17 @@ export default function Sidebar() {
           drawerLabel: `${i18n.t("Soporte")}`,
         }}
         component={SuportScreen}
+      />
+      <Drawer.Screen
+        name="SettingsScreen"
+        options={{
+          title: `${i18n.t("Configuración")}`,
+          drawerIcon: ({ size }) => (
+            <FontAwesome name="cogs" color={"#fff"} size={size} />
+          ),
+          drawerLabel: `${i18n.t("Configuración")}`,
+        }}
+        component={SettingScreen}
       />
     </Drawer.Navigator>
   );

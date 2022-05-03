@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 import HomeScreen from '../screens/Home/HomeScreen'
 import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import AgregarProducto from '../screens/Home/AgregarProducto'
+import ChatScreen from '../screens/ChatGeneralScreen/ChatScreen/ChatScreen'
 
 interface Props {
     children: React.ReactNode,
@@ -37,7 +38,7 @@ const CustomTabBarButton = ({ children, onPress }: Props) => (
 )
 
 
-export default function BottonTabNavigator() {
+export const BottonTabNavigator=()=> {
     return (
             <Tab.Navigator
                 screenOptions={{
@@ -63,8 +64,8 @@ export default function BottonTabNavigator() {
                 }}
             >
                 <Tab.Screen
-                    name="HomeTab"
-                    component={HomeScreen}
+                    name="Chat"
+                    component={ChatScreen}
                     options={{
                         tabBarActiveBackgroundColor: "#78c858",
                         tabBarInactiveBackgroundColor: "#6e3fda",
@@ -74,7 +75,7 @@ export default function BottonTabNavigator() {
                             display: "flex",
                         },
                         tabBarIcon: ({ focused, color }) => (
-                            <Icon name="home" size={30} color={focused ? color : "#ffffff"} />
+                            <Icon name="chat" size={30} color={focused ? color : "#ffffff"} />
                         ),
                         tabBarLabel: () => <Text style={styles.tabBarLabel}>Home</Text>,
                     }}
@@ -102,7 +103,7 @@ export default function BottonTabNavigator() {
                             />
                         ),
                         // tabBarLabel: () => <Text style={styles.tabBarLabel}>Book Room</Text>,
-                        tabBarButton: (props) => <CustomTabBarButton {...props} />,
+                        // tabBarButton: (props) => <CustomTabBarButton {...props} />,
                     }}
                 />
                 <Tab.Screen

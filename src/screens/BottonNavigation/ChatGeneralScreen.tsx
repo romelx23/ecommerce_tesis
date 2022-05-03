@@ -1,10 +1,13 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React, { useContext, useState } from 'react'
 import ChatScreen from '../ChatGeneralScreen/ChatScreen/ChatScreen';
 import { BottomNavigation } from 'react-native-paper';
 import { MyChatScreen } from '../ChatGeneralScreen/MyChatScreen/MyChatScreen';
 import { MyDarkTheme, MyTheme } from '../../Router/AppRouter';
 import { themeContext } from '../../context/themeContext';
+import { Tab } from 'react-native-elements';
+import CustomTabBottom from '../../components/CustomTabBottom';
+import { BottonTabNavigator } from '../../components/BottonTabNavigator';
 
 export const ChatGeneralScreen = () => {
     const { tema } = useContext(themeContext);
@@ -18,17 +21,25 @@ export const ChatGeneralScreen = () => {
         mychat: MyChatScreen,
     });
   return (
-    <BottomNavigation
-        theme={tema ? MyDarkTheme : MyTheme}
-        style={{width: '100%',height: '10%' }}
-        navigationState={{
-          index,
-          routes
-        }}
-        onIndexChange={index => setIndex(index)}
-        renderScene={renderScene}
-      />
+    // <View style={styles.container}>
+    //   <BottomNavigation
+    //     theme={tema ? MyDarkTheme : MyTheme}
+    //     style={{width: '100%',height: '10%' }}
+    //     navigationState={{
+    //       index,
+    //       routes
+    //     }}
+    //     onIndexChange={index => setIndex(index)}
+    //     renderScene={renderScene}
+    //   />
+    // </View>
+    <CustomTabBottom/>
+    // <BottonTabNavigator/>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  }
+})

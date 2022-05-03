@@ -6,6 +6,7 @@ import { ChatList } from '../../../components/Chat/ChatList';
 import { BottomNavigation } from 'react-native-paper';
 import CartScreen from '../../CartScreen/CartScreen';
 import { MyChatScreen } from '../MyChatScreen/MyChatScreen';
+import { ListUsers } from '../../../components/Chat/ListUsers';
 
 export default function ChatScreen() {
   
@@ -13,7 +14,7 @@ export default function ChatScreen() {
     <View>
       <ChatActiveList/>
       <ChatSearch/>
-      <ChatList/>
+      <ListUsers/>
     </View>
   )
 }
