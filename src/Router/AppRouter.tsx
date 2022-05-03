@@ -32,7 +32,7 @@ type RootStackParamList = {
 // const Stack = createNativeStackNavigator();
 const Stack = createSharedElementStackNavigator();
 
-const MyTheme = {
+export const MyTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
@@ -44,7 +44,7 @@ const MyTheme = {
   cardColor:'#ffffff'
 };
 
-const MyDarkTheme = {
+export const MyDarkTheme = {
   ...DarkTheme,
   colors: {
     ...DarkTheme.colors,

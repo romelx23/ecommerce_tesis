@@ -1,22 +1,36 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { FC } from 'react'
 import { Image } from 'react-native-elements'
+import { useTheme } from "@react-navigation/native";
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export const ChatItem = () => {
+interface Props{
+    item: {
+        id: number,
+        name: string,
+        avatar: string,
+    }
+}
+
+export const ChatItem:FC<Props> = ({item}) => {
+    const { colors } = useTheme();
   return (
-    <View style={styles.container}>
+    <TouchableOpacity 
+    activeOpacity={0.6}
+    style={styles.container}
+    >
         <Image
             style={styles.circleContainer}
             source={{
-                uri:   'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fb4f0ef311f82d865d95dbf14e635e4c749d91c.jpg'
+                uri:   item.avatar?item.avatar:"https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fb4f0ef311f82d865d95dbf14e635e4c749d91c.jpg"
             }}
         />
       <View style={styles.contentMessage}>
-        <Text style={styles.titleMessage}>Cristian Chipana</Text>
-        <Text>Este es un mensaje</Text>
+        <Text style={{ color: colors.text,...styles.titleMessage }}>Cristian Chipana</Text>
+        <Text style={{ color: colors.text }}>Este es un mensaje</Text>
       </View>
-      <Text>5:40pm</Text>
-    </View>
+      <Text style={{ color: colors.text }}>5:40pm</Text>
+    </TouchableOpacity>
   )
 }
 

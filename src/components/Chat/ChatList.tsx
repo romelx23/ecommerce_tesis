@@ -13,7 +13,7 @@ export const ChatList = () => {
         showsVerticalScrollIndicator={false}
         keyExtractor={(user) => user?.id.toString()}
         renderItem={({ item }) => (
-            <ChatItem />
+            <ChatItem item={item} />
         )}
       />
     </View>

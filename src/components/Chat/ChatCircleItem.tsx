@@ -1,8 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import { useTheme } from "@react-navigation/native";
 import { Image } from 'react-native-elements'
 
 export const ChatCircleItem = () => {
+  const { colors } = useTheme();
   return (
     <View style={styles.container}>
         <Image
@@ -11,7 +13,7 @@ export const ChatCircleItem = () => {
                 uri:   'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fb4f0ef311f82d865d95dbf14e635e4c749d91c.jpg'
             }}
         />
-      <Text>Juan</Text>
+      <Text style={{ color: colors.text }}>Juan</Text>
     </View>
   )
 }

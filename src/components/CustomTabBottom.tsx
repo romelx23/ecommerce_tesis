@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "../screens/Home/HomeScreen";
 import FavoriteScreen from '../screens/FavoriteScreen/FavoriteScreen';
-import ChatScreen from '../screens/ChatScreen/ChatScreen';
+import ChatScreen from '../screens/ChatGeneralScreen/ChatScreen/ChatScreen';
 import CartScreen from "../screens/CartScreen/CartScreen";
 import { PropsNavigationHome } from '../interfaces/home';
 import { TouchableOpacity } from "react-native-gesture-handler";

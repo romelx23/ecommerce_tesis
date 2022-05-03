@@ -12,8 +12,9 @@ import { fontContext } from "../context/FontContext";
 import { AuthContext } from "../context/AuthContext";
 import MapScreen from "../screens/MapScreen/MapScreen";
 import CartScreen from '../screens/CartScreen/CartScreen';
-import ChatScreen from '../screens/ChatScreen/ChatScreen';
+import ChatScreen from '../screens/ChatGeneralScreen/ChatScreen/ChatScreen';
 import FavoriteScreen from '../screens/FavoriteScreen/FavoriteScreen';
+import { ChatGeneralScreen } from '../screens/BottonNavigation/ChatGeneralScreen';
 const Drawer = createDrawerNavigator();
 
 export default function Sidebar() {
@@ -135,7 +136,7 @@ export default function Sidebar() {
           ),
           drawerLabel: `${i18n.t("Chat")}`,
         }}
-        component={ChatScreen}
+        component={ChatGeneralScreen}
       />
       <Drawer.Screen
         name="SupportScreen"

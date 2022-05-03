@@ -7,12 +7,12 @@ export const chatUsers=[
     {
         id:2,
         name:'Sara',
-        avatar:'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fb4f0ef311f82d865d95dbf14e635e4c749d91c.jpg'
+        avatar:'https://www.nacionrex.com/__export/1628273274801/sites/debate/img/2021/08/06/avatar-nacion-rex_crop1628272752516.png_423682103.png'
     },
     {
         id:3,
         name:'Bill',
-        avatar:'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fb4f0ef311f82d865d95dbf14e635e4c749d91c.jpg'
+        avatar:'https://www.nacionrex.com/__export/1628273274801/sites/debate/img/2021/08/06/avatar-nacion-rex_crop1628272752516.png_423682103.png'
     },
     {
         id:4,
@@ -22,7 +22,7 @@ export const chatUsers=[
     {
         id:5,
         name:'Tom',
-        avatar:'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fb4f0ef311f82d865d95dbf14e635e4c749d91c.jpg'
+        avatar:'https://www.nacionrex.com/__export/1628273274801/sites/debate/img/2021/08/06/avatar-nacion-rex_crop1628272752516.png_423682103.png'
     },
     {
         id:6,
@@ -32,7 +32,7 @@ export const chatUsers=[
     {
         id:7,
         name:'Tom',
-        avatar:'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fb4f0ef311f82d865d95dbf14e635e4c749d91c.jpg'
+        avatar:'https://www.nacionrex.com/__export/1628273274801/sites/debate/img/2021/08/06/avatar-nacion-rex_crop1628272752516.png_423682103.png'
     },
     {
         id:8,
@@ -42,7 +42,7 @@ export const chatUsers=[
     {
         id:9,
         name:'Tom',
-        avatar:'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5f/5fb4f0ef311f82d865d95dbf14e635e4c749d91c.jpg'
+        avatar:'https://www.nacionrex.com/__export/1628273274801/sites/debate/img/2021/08/06/avatar-nacion-rex_crop1628272752516.png_423682103.png'
     },
     {
         id:10,

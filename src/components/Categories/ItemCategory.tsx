@@ -4,6 +4,7 @@ import { Icon } from 'react-native-elements'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Navigation } from '../../interfaces/Navigation';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useTheme } from "@react-navigation/native";
 
 interface Props extends NativeStackScreenProps<any, any> {
     item: {
@@ -15,6 +16,7 @@ interface Props extends NativeStackScreenProps<any, any> {
   }
 
 export const ItemCategory:FC<Props>=({item,navigation})=> {
+    const { colors } = useTheme();
     const handleCategory=()=>{
         const category={
                 name:item.title,
@@ -35,7 +37,7 @@ export const ItemCategory:FC<Props>=({item,navigation})=> {
             size={20}
         />
     </View>
-    <Text>{item.title}</Text>
+    <Text style={{ color: colors.text }}>{item.title}</Text>
 </TouchableOpacity>
   )
 }
