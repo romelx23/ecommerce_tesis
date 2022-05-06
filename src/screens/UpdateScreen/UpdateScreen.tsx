@@ -28,7 +28,7 @@ export default function UpdateScreen({
   route,
   navigation,
 }: PropsDetalleProducto) {
-  const{colors}=useTheme();
+  const { colors } = useTheme();
   const { cargarProductos } = useContext<any>(ProductosContext);
   const [imageSelected, setImageSelected] = useState<InterfaceStateImage>({
     localUri: "",
@@ -50,6 +50,7 @@ export default function UpdateScreen({
   useEffect(() => {
     getProductbyId(`${id}`).then((resp) => {
       const { producto } = resp;
+      console.log(resp);
       setProducto({
         precio: parseInt(producto.precio),
         disponible: true,
@@ -83,8 +84,10 @@ export default function UpdateScreen({
   };
 
   const handleSubmit = async () => {
-    console.log("111111111111111111111111");
+    try {
 
+      if(imageSelected.localUri!==""){
+        console.log("111111111111111111111111");
       const photo = {
         uri: imageSelected.localUri,
         type: `test/${imageSelected.localUri?.split(".")[1]}`,
@@ -108,94 +111,98 @@ export default function UpdateScreen({
       const paser: InterfaceRespuestaCloudinary = await data_image.json();
 
       setImage(paser.secure_url);
+    }
+
       console.log(producto);
-      const newProducto = await updateProducto(id, producto, paser.secure_url);
+      console.log(imageSelected.localUri);
+      const newProducto = await updateProducto(id, producto, image===""?imageSelected.localUri:image);
 
       console.log(newProducto);
       await cargarProductos();
 
-    navigation.navigate("home");
+      navigation.navigate("home");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <ScrollView>
-            <View
-                style={style.contenedorAgregar}
-            >
-      <Text style={{color:colors.text}}>Nombre del producto</Text>
-      <TextInput
-        style={style.input}
-        placeholder="Nombre del producto"
-        placeholderTextColor="#ADADAD"
-        value={producto.nombre}
-        onChangeText={(a) => handleChange("nombre", a)}
-      ></TextInput>
+      <View style={style.contenedorAgregar}>
+        <Text style={{ color: colors.text }}>Nombre del producto</Text>
+        <TextInput
+          style={style.input}
+          placeholder="Nombre del producto"
+          placeholderTextColor="#ADADAD"
+          value={producto.nombre}
+          onChangeText={(a) => handleChange("nombre", a)}
+        ></TextInput>
 
-      <Text style={{color:colors.text}}>Precio del producto</Text>
-      <TextInput
-        style={style.input}
-        placeholder="Precio..."
-        placeholderTextColor="#ADADAD"
-        keyboardType="number-pad"
-        value={producto.precio.toString()}
-        onChangeText={(a) => handleChange("precio", a)}
-      ></TextInput>
+        <Text style={{ color: colors.text }}>Precio del producto</Text>
+        <TextInput
+          style={style.input}
+          placeholder="Precio..."
+          placeholderTextColor="#ADADAD"
+          keyboardType="number-pad"
+          value={producto.precio.toString()}
+          onChangeText={(a) => handleChange("precio", a)}
+        ></TextInput>
 
-      <Text style={{color:colors.text}}>Descripción del producto</Text>
-      <View
-        style={{
-          backgroundColor: "#fff",
-          // borderWidth: 2,
-          // borderColor: "yellow",
-        }}
-      >
-        <TextArea
-          multiline
-          numberOfLines={4}
-          value={producto.descripcion}
-          onChangeText={(a: string) => handleChange("descripcion", a)}
-          style={{ padding: 10 }}
-        />
-      </View>
-      <Text style={{color:colors.text}}>Id de producto</Text>
-      <TextInput
-        style={style.input}
-        placeholder="Nombre del idProducto"
-        placeholderTextColor="#ADADAD"
-        value={producto.idProducto}
-        onChangeText={(a) => handleChange("idProducto", a)}
-      ></TextInput>
-      <Text style={{color:colors.text}}>Mac de producto</Text>
-      <TextInput
-        style={style.input}
-        placeholder="Nombre del mac"
-        placeholderTextColor="#ADADAD"
-        value={producto.mac}
-        onChangeText={(a) => handleChange("mac", a)}
-      ></TextInput>
-
-      <View style={style.contenedorBuscarImagen}>
-        <TouchableOpacity
-          onPress={handleCargarImagen}
-          style={style.buttonBuscarImage}
-        >
-          <Text style={style.TextButonBuscarImagen}>Buscar Imagen...</Text>
-        </TouchableOpacity>
-        <Image
-          style={style.imagen}
-          source={{
-            uri: !imageSelected.localUri
-              ? producto.img
-              : imageSelected.localUri,
+        <Text style={{ color: colors.text }}>Descripción del producto</Text>
+        <View
+          style={{
+            backgroundColor: "#fff",
+            // borderWidth: 2,
+            // borderColor: "yellow",
           }}
-        ></Image>
-      </View>
+        >
+          <TextArea
+            multiline
+            numberOfLines={4}
+            value={producto.descripcion}
+            onChangeText={(a: string) => handleChange("descripcion", a)}
+            style={{ padding: 10 }}
+          />
+        </View>
+        <Text style={{ color: colors.text }}>Id de producto</Text>
+        <TextInput
+          style={style.input}
+          placeholder="Nombre del idProducto"
+          placeholderTextColor="#ADADAD"
+          value={producto.idProducto}
+          onChangeText={(a) => handleChange("idProducto", a)}
+        ></TextInput>
+        <Text style={{ color: colors.text }}>Mac de producto</Text>
+        <TextInput
+          style={style.input}
+          placeholder="Nombre del mac"
+          placeholderTextColor="#ADADAD"
+          value={producto.mac}
+          onChangeText={(a) => handleChange("mac", a)}
+        ></TextInput>
 
-      <TouchableOpacity style={style.buttonSave} onPress={handleSubmit}>
-        <Text style={style.buttonSaveText}>Actualizar Producto</Text>
-      </TouchableOpacity>
+        <View style={style.contenedorBuscarImagen}>
+          <TouchableOpacity
+            onPress={handleCargarImagen}
+            style={style.buttonBuscarImage}
+          >
+            <Text style={style.TextButonBuscarImagen}>Buscar Imagen...</Text>
+          </TouchableOpacity>
+          <Image
+            style={style.imagen}
+            source={{
+              uri: !imageSelected.localUri
+                ? producto.img
+                : imageSelected.localUri,
+            }}
+          ></Image>
+        </View>
+
+        <TouchableOpacity style={style.buttonSave} onPress={handleSubmit}>
+          <Text style={style.buttonSaveText}>Actualizar Producto</Text>
+        </TouchableOpacity>
       </View>
-      </ScrollView>
+    </ScrollView>
   );
 }
 

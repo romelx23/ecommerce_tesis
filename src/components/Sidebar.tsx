@@ -15,6 +15,9 @@ import CartScreen from "../screens/CartScreen/CartScreen";
 import ChatScreen from "../screens/ChatGeneralScreen/ChatScreen/ChatScreen";
 import FavoriteScreen from "../screens/FavoriteScreen/FavoriteScreen";
 import { ChatGeneralScreen } from "../screens/BottonNavigation/ChatGeneralScreen";
+import { Icon } from "react-native-elements";
+import { ManagementScreen } from '../screens/MangementScreen/Management/ManagementScreen';
+import { Management } from '../screens/Management/Management';
 const Drawer = createDrawerNavigator();
 
 export default function Sidebar() {
@@ -89,7 +92,7 @@ export default function Sidebar() {
         options={{
           title: `${i18n.t("Localización")}`,
           drawerIcon: ({ size }) => (
-            <FontAwesome name="map" color={"#fff"} size={size} />
+            <Icon name="location-on" color={"#fff"} size={size} type="material" />
           ),
           drawerLabel: `${i18n.t("Localización")}`,
         }}
@@ -138,6 +141,17 @@ export default function Sidebar() {
           drawerLabel: `${i18n.t("Soporte")}`,
         }}
         component={SuportScreen}
+      />
+      <Drawer.Screen
+        name="ManagementScreen"
+        options={{
+          title: `${i18n.t("Administración")}`,
+          drawerIcon: ({ size }) => (
+            <Icon name="admin-panel-settings" color={"#fff"} size={size} type="material"/>
+          ),
+          drawerLabel: `${i18n.t("Administración")}`,
+        }}
+        component={Management}
       />
       <Drawer.Screen
         name="SettingsScreen"
